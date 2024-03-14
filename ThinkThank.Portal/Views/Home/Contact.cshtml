@@ -1,0 +1,174 @@
+﻿@{ Layout = "_Layout"; }
+
+
+<style>
+    /* Ваши стили */
+    #one {
+        margin-top: 50px;
+        box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+    }
+    .it .btn-orange {
+        background-color: transparent;
+        border-color: #777!important;
+        color: #777;
+        text-align: left;
+        width: 100%;
+    }
+    .it input.form-control {
+        height: 54px;
+        border: none;
+        margin-bottom: 0px;
+        border-radius: 0px;
+        border-bottom: 1px solid #ddd;
+        box-shadow: none;
+        width: 100%; /* Сделать ширину input равной ширине родительского div */
+    }
+    .it .form-control:focus {
+        border-color: #ff4d0d;
+        box-shadow: none;
+        outline: none;
+    }
+    .fileUpload {
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+    }
+    .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    .it .btn-new,
+    .it .btn-next {
+        margin: 30px 0px;
+        border-radius: 0px;
+        background-color: #333;
+        color: #f5f5f5;
+        font-size: 16px;
+        width: 155px;
+    }
+    .it .btn-next {
+        background-color: #ff4d0d;
+        color: #fff;
+    }
+    .it .btn-check {
+        cursor: pointer;
+        line-height: 54px;
+        color: red;
+    }
+    .it .uploadDoc {
+        margin-bottom: 20px;
+    }
+    .it .btn-orange img {
+        width: 30px;
+    }
+    p {
+        font-size: 16px;
+        text-align: center;
+        margin: 30px 0px;
+    }
+    .it #uploader .docErr {
+        position: absolute;
+        right: auto;
+        left: 10px;
+        top: -56px;
+        padding: 10px;
+        font-size: 15px;
+        background-color: #fff;
+        color: red;
+        box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
+        display: none;
+    }
+    .it #uploader .docErr:after {
+        content: '\f0d7';
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 50px;
+        color: #fff;
+        position: absolute;
+        left: 30px;
+        bottom: -40px;
+        text-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+    }
+</style>
+
+<section data-w-id="05b861ae-6aed-1fb8-6c6c-e7a829c39fdc" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="contact-section section-spacing-bottom">
+	<div class="w-layout-blockcontainer container-full w-container">
+		<div class="w-layout-grid grid-contact">
+			<div id="w-node-_75473829-e5c3-3779-31a6-2fecbe2d55a9-9796d4c3">
+				<h1>Reach out to us</h1>
+				<div class="contact-address">
+					<div>
+						<h2 class="contact-info-title">Location</h2>
+						<p>Chicago HQ Estica Cop. Macomb, MI 48042</p>
+					</div>
+					<div>
+						<h3 class="contact-info-title">Office hours</h3>
+						<p>Mon - fri : 9:00 am - 6:00 pm</p>
+						<p>sat - sun : closed</p>
+					</div>
+				</div>
+			</div>
+			<form action="@Url.Action("UploadFile","Home")" method="post" enctype="multipart/form-data">
+				<div class="contact-form-wrap">
+                				<div class="form-block w-form">
+                					<form id="wf-form-Contact-Form" name="wf-form-Contact-Form-2" data-name="Contact Form" method="get" data-wf-page-id="65799286ea333ad19796d4c3" data-wf-element-id="ab3c9538-b83c-3823-ffdf-e3fad19a414f" aria-label="Contact Form">
+                						<div class="contact-form-input-wrap">
+                							<div class="input-group">
+                								<input class="form-input w-input" maxlength="256" name="Name" data-name="Name" placeholder="Enter your name" type="text" id="Name">
+                							</div>
+                							<div class="input-group">
+                								<input class="form-input w-input" maxlength="256" name="Email" data-name="Email" placeholder="Enter your email" type="email" id="Email" required="">
+                							</div>
+                						</div>
+                						<div class="contact-form-input-wrap">
+                							<div class="input-group">
+                								<input class="form-input w-input" maxlength="256" name="Subject" data-name="Subject" placeholder="Enter your subject" type="text" id="Subject">
+                							</div>
+                							<div class="input-group">
+                								<input class="form-input w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Enter your phone" type="tel" id="Phone">
+                							</div>
+                						</div>
+                  <div class="container">
+                        <div class="row it">
+                            <div class="col-sm-offset-1 col-sm-10" id="one">
+                                <div id="uploader">
+                                    <div class="row uploadDoc">
+                                        <div class="col-sm-3">
+                                            <div class="fileUpload btn btn-orange">
+                                                <h3 class="text-center upl" id="upload">Upload
+                                                <input type="file" class="upload up form-control" name="data" id="up" />
+                                                    </h3>
+                                            </div><!-- btn-orange -->
+                                        </div><!-- col-3 -->
+                                        <div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a></div><!-- col-1 -->
+                                    </div><!--row-->
+                                </div><!--uploader-->
+                            </div><!--one-->
+                        </div><!-- row -->
+                    </div><!-- container -->
+                						<br/>
+                						<br/>
+                						<div class="input-group">
+                							<textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Enter your message" class="form-input form-textarea w-input"></textarea>
+                						</div>
+                						<input  type="submit" data-wait="Please wait..." class="button-white w-button" value="Send Message">
+                					</form>
+                					<div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Contact Form success">
+                						<div>Thank you! Your submission has been received!</div>
+                					</div>
+                					<div class="error-message w-form-fail" tabindex="-1" role="region" aria-label="Contact Form failure">
+                						<div>Oops! Something went wrong while submitting the form.</div>
+                					</div>
+                				</div>
+                			</div>
+			</form>
+		</div>
+	</div>
+</section>
